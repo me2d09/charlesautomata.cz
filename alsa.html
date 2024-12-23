@@ -1,0 +1,178 @@
+---
+layout: page
+title: Automatic Laue Sample Aligner
+bg: 05.jpg
+---
+<!--service single start-->
+
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-12 ps-lg-10 order-lg-1">
+          <p>
+            While synchrotron power continues to increase by orders of magnitude, neutrons reached their highest power 50 years ago at ILL and it will be slightly surpassed with the help of ESS. 
+            Therefore, scientists have been trying for decades to optimize optics, measurement strategy or build multi-detector systems to take advantage of every possible neutron to measure weaker 
+            fluctuations on smaller samples. Our approach tackles the problem from the other end. The goal of ALSA is to increase the sample size for inelastic neuron experiments. 
+            It will fully automatize the co-alignment process by using a state-of-the-art X-Ray Laue diffractometer, robotized manipulators, real-time camera recognition and special 
+            software analysis for crystal placing. The device ALSA will be a true game changer in the field of inelastic neutron scattering, because it will drastically speed-up sample preparation.
+          </p>
+          <blockquote class="theme-blockquote mb-7">
+            <p>“The goal of ALSA is to increase the sample size for inelastic neuron experiments. It is game changer in neutron scattering”</p>
+            <span></span>
+          </blockquote>
+          <div class="tab">
+            <!-- Nav tabs -->
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active ms-0" id="nav-tab1" data-bs-toggle="tab" href="#tab3-1" role="tab" aria-selected="true">Alsa at Glance</a>
+                <a class="nav-item nav-link" id="nav-tab2" data-bs-toggle="tab" href="#tab3-2" role="tab" aria-selected="false">Technical design</a>
+                <a class="nav-item nav-link" id="nav-tab3" data-bs-toggle="tab" href="#tab3-3" role="tab" aria-selected="false">Experimental results</a>
+              </div>
+            </nav>
+            <!-- Tab panes -->
+            <div class="tab-content pt-3">
+              <div role="tabpanel" class="tab-pane fade show active" id="tab3-1">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <p class="text-dark mb-3">
+                          <b>Precise 6-axis robotic arm</b>
+                        </p>
+                        <p class="mb-0">
+                            <ul>
+                                <li>repeatability below 5 μm</li>
+                                <li>vacuum pick-up system</li>
+                                <li>gripper for large samples</li>
+                            </ul>
+                        </p>
+                        <p class="text-dark mb-3">
+                          <b>Laue diffractometer</b>
+                        </p>
+                        <p class="mb-0">
+                            <ul>
+                                <li>250 µm focused beam</li>
+                                <li>50 W X-Ray source</li>
+                            </ul>
+                        </p>
+                        <p class="text-dark mb-3">
+                          <b>Built for your needs</b>
+                        </p>
+                        <p class="mb-0">
+                            <ul>
+                                <li>small size (1×1×1 m)</li>
+                                <li>can work under protective atmosphere</li>
+                                <li>easy customization</li>
+                            </ul>
+                        </p>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <p class="text-dark mb-3">
+                              <b>5 optical cameras</b>
+                            </p>
+                            <p class="mb-0">
+                                <ul>
+                                    <li>object detection</li>
+                                    <li>automatic tracking of sample plates</li>
+                                    <li>macro camera for precise shape detection</li>
+                                </ul>
+                            </p>
+                            <p class="text-dark mb-3">
+                              <b>Unique placing algorithm</b>
+                            </p>
+                            <p class="mb-0">
+                                <ul>
+                                    <li>saving up to 50% of space in comparison with human glueing</li>
+                                    <li>online bin-packing problem solver</li>
+                                    <li>automatic glue dispenser</li>
+                                </ul>
+                            </p>
+                            <p class="text-dark mb-3">
+                              <b>Custom software</b>
+                            </p>
+                            <p class="mb-0">
+                                <ul>
+                                    <li>self-learning optimization</li>
+                                    <li>open-source control software</li>
+                                    <li>software and hardware upgrades</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="tab3-2">
+                <p class="text-dark mb-3">
+                    <b>
+                      The purpose of the machine is to take several small single crystals with a known crystal structure but an unknown orientation, 
+                      orient them and glue them together on an aluminium plate. Most of the minerals have flat facets parallel to the high symmetry crystallographic planes. 
+                      With this constraint, orientation and especially the glueing of the samples becomes a much easier task (since there are limited degrees of freedom). 
+                      The oriented crystals need to be glued remarkably close to each other in order to keep the final sample as small as possible.
+                    </b>
+                  </p>
+                  <p class="mb-0">
+                      The basis of the device is a conventional Laue X-ray diffractometer. In addition, there is a robotic arm with a tiny plastic straw. 
+                      The arm will use suction to grab the mineral, and a conventional industry camera will determine its detailed shape. 
+                      Then the arm will take the sample to the X-ray beam, and a specially developed software will automatically determine its crystallographic orientation from the Laue image. The software will compare the micro- and macroscopic orientations and the arm will put the sample in the correct place on the aluminium plate. The plate will be covered with hydrogen-free glue (CYTOP), and the whole plate will be placed on a small stove to allow for a proper glueing process to take place.
+                  </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="tab3-3">
+                <p class="text-dark mb-3">
+                  <b>Quality checked by neutron scattering using IN12 </b>
+                </p>
+                <p>Over 300 crystals coaligned (mass over 3 g) in a 5 days. Final mosaicity was under 2°.</p>
+                <p class="mb-0">More details will be published soon.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row my-7">
+            <div class="col-md-6">
+              <img class="img-fluid" src="images/alsa.jpg" alt="Image">
+            </div>
+            <div class="col-md-6 mt-5 mt-md-0">
+              <img class="img-fluid" src="images/alsa2.jpg" alt="Image">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 mt-8 mt-lg-0">
+          <div class="bg-white box-shadow p-5">
+            <div class="service-widget">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="active" href="/alsa">Automatic Laue Sample Aligner</a>
+                </li>
+                <li>
+                  <a href="/caas">Coalignment as a Service</a>
+                </li>
+                <li>
+                  <a href="/gonio">Clever Goniometer</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="py-10 px-5 text-center mt-6" data-bg-img="images/bg/02.jpg" data-overlay="8">
+            <h3 class="text-white mb-4">Get A Quote</h3>
+            <p class="text-white">Contact us and we will let you know.</p>
+            <a href="/contact" class="primary-btn">
+              <span>Contact Us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--service single end-->
+  
+  
+  <!--contact start-->
+  
+  <section class="dark-bg pb-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="/contact" class="marquee-btn"><span>Let's Get Started<i class="las la-asterisk"></i>Write Us<i class="las la-asterisk"></i>Let's Get Started<i class="las la-asterisk"></i>Write Us<i class="las la-asterisk"></i>Let's Get Started<i class="las la-asterisk"></i>Write Us<i class="las la-asterisk"></i>Let's Get Started<i class="las la-asterisk"></i>Write Us<i class="las la-asterisk"></i></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--contact end-->

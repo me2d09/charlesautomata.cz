@@ -233,17 +233,17 @@ function contactform() {
 
     // if the validator does not prevent form submit
     if (!e.isDefaultPrevented()) {
-        var url = "php/contact.php";
+      //var url = "https://submit-form.com/HsrwkVv4X";
+      var url = "https://submit-form.com/echo";
 
         // POST values in the background the the script URL
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: $(this).serialize(),
-            success: function (data)
-            {
-            // data = JSON object that contact.php returns
-
+        $.post(
+          url,
+          $(this).serialize(),
+          null,
+          "json" // dataType must be set to json
+        )
+          .then(function (data) {
             // we recieve the type of the message: success x danger and apply it to the 
             var messageAlert = 'alert-' + data.type;
             var messageText = data.message;
@@ -258,8 +258,10 @@ function contactform() {
                 // empty the form
                 $('#contact-form')[0].reset();
             }
-          }
-        });
+          })
+          .catch(function (response) {
+            console.error(response);
+          });
         return false;
     }
  })    
