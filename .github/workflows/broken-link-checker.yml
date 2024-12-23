@@ -1,0 +1,27 @@
+name: Broken Link Checker
+on: [push]
+jobs:
+  check_links:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: SFDigitalServices/wait-for-deployment-action@v2
+      id: deployment
+      with:
+        timeout: 600
+        github-token: ${{ github.token }}
+        environment: Preview
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15.x
+    - name: Install Muffet
+      run: GO111MODULE=on go get -u github.com/raviqqe/muffet/v2
+    - name: Install Broken Link Checker
+      run: GO111MODULE=on go get -u github.com/hashicorp/broken-link-checker
+    - name: Run
+      run: broken-link-checker ${{ steps.deployment.outputs.url }}
+      env:
+        VERBOSE: true
+        MAX_CONNECTIONS: 5
+        TIMEOUT_SECONDS: 10
+        EXCLUSIONS: linkedin.com,facebook.com,x.com,twitter.com
