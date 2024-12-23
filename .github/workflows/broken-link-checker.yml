@@ -2,7 +2,7 @@ name: Broken Link Checker
 on: [push]
 jobs:
   check_links:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
     - uses: SFDigitalServices/wait-for-deployment-action@v2
       id: deployment
