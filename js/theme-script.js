@@ -245,8 +245,8 @@ function contactform() {
         )
           .then(function (data) {
             // we recieve the type of the message: success x danger and apply it to the 
-            var messageAlert = 'alert-' + data.type;
-            var messageText = data.message;
+            var messageAlert = 'alert-success';
+            var messageText = 'Your message was successfully sent.';
 
             // let's compose Bootstrap alert box HTML
             var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
@@ -254,13 +254,23 @@ function contactform() {
             // If we have messageAlert and messageText
             if (messageAlert && messageText) {
                 // inject the alert to .messages div in our form
-                $('#contact-form').find('.messages').html(alertBox).show().delay(2000).fadeOut('slow');
+                $('#contact-form').find('.messages').html(alertBox).show().delay(10000).fadeOut('slow');
                 // empty the form
                 $('#contact-form')[0].reset();
             }
           })
           .catch(function (response) {
+            var messageAlert = 'alert-danger';
+            var messageText = 'There was an error sending your message, try again or to send us email.';
             console.error(response);
+            // let's compose Bootstrap alert box HTML
+            var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+            
+            // If we have messageAlert and messageText
+            if (messageAlert && messageText) {
+                // inject the alert to .messages div in our form
+                $('#contact-form').find('.messages').html(alertBox).show().delay(10000).fadeOut('slow');
+            }
           });
         return false;
     }
