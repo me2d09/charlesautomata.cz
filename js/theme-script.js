@@ -226,56 +226,46 @@ function databgcolor() {
 /*------------------------------------
   HT Contact Form
 --------------------------------------*/
-function contactform() { 
-
-    // when the form is submitted
-    $('#contact-form').on('submit', function (e) {
-
-    // if the validator does not prevent form submit
+function contactform() {
+  // when the form is submitted
+  $('#contact-form').on('submit', function (e) {
+    // Prevent default submission if validation fails
     if (!e.isDefaultPrevented()) {
-      //var url = "https://submit-form.com/HsrwkVv4X";
-      var url = "https://submit-form.com/echo";
+      const url = "https://submit-form.com/HsrwkVv4X";  
 
-        // POST values in the background the the script URL
-        $.post(
-          url,
-          $(this).serialize(),
-          null,
-          "json" // dataType must be set to json
-        )
-          .then(function (data) {
-            // we recieve the type of the message: success x danger and apply it to the 
-            var messageAlert = 'alert-success';
-            var messageText = 'Your message was successfully sent.';
+      // POST values in the background
+      $.post(url, $(this).serialize(), null, "json")
+        .then(function () {
+          showAlert(
+            'alert-success',
+            '<b>Your message has been successfully sent</b>.<br>Thank you for reaching out to us! We will get back to you shortly.'
+          );
+          // Reset the form
+          $('#contact-form')[0].reset();
+        })
+        .catch(function (response) {
+          console.error(response);
+          showAlert(
+            'alert-danger',
+            'There was an error sending your message. Please try again or send us an <a href="mailto:info@charlesautomata.cz">email</a>.'
+          );
+        });
 
-            // let's compose Bootstrap alert box HTML
-            var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-            
-            // If we have messageAlert and messageText
-            if (messageAlert && messageText) {
-                // inject the alert to .messages div in our form
-                $('#contact-form').find('.messages').html(alertBox).show().delay(10000).fadeOut('slow');
-                // empty the form
-                $('#contact-form')[0].reset();
-            }
-          })
-          .catch(function (response) {
-            var messageAlert = 'alert-danger';
-            var messageText = 'There was an error sending your message, try again or to send us email.';
-            console.error(response);
-            // let's compose Bootstrap alert box HTML
-            var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-            
-            // If we have messageAlert and messageText
-            if (messageAlert && messageText) {
-                // inject the alert to .messages div in our form
-                $('#contact-form').find('.messages').html(alertBox).show().delay(10000).fadeOut('slow');
-            }
-          });
-        return false;
+      // Prevent default form submission
+      return false;
     }
- })    
-};
+  });
+
+  // Function to display alert messages
+  function showAlert(alertClass, messageText) {
+    const alertBox = `
+      <div class="alert ${alertClass} alert-dismissible fade show" role="alert">
+        ${messageText}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`;
+    $('#contact-form').find('.messages').html(alertBox).show();
+  }
+}
 
 
 /*------------------------------------
